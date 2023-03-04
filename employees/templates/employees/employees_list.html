@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Employee Manager
+{% endblock title %}
+    
+{% block main %}
+    <h1>Hello</h1>
+    {% for employee in object_list  %}
+    <br><a href="{% url 'edit_employee' employee.id %}"> {{employee}} </a>
+    {% endfor %}
+    <br><br>
+    <a class='btn btn-primary' href="{% url 'create_employee' %}">Create Employee</a>
+{% endblock %}

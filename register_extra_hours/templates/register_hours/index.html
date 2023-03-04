@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} HR - Register Hours {% endblock %}
+{% block main %}
+
+{% for employee in object_list  %}
+    <a href='{% url "edit_hours" employee.id %}'>{{employee.reason}}</a><br>
+
+
+{% endfor %}
+
+{% endblock %}

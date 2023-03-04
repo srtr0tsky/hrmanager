@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{%block title%}{{title}}{%endblock%}
+{% block main %}
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'logout' %}"> Logout </a> 
+        </div>
+        <div class="col">
+            <h1> Hello, {{user.employee}}</h1>
+            
+        </div>
+        <div class="col">
+            {% if user.employee.enterprise %}
+                <a href="{% url 'edit_enterprise' user.employee.enterprise.id %}">Edit Enterprise </a> 
+            {% else %}
+                <a href="{% url 'create_enterprise' %}">Create Enterprise </a> 
+            {% endif %}
+             
+        </div>
+        <div class="col">
+            <a href="{% url 'list_employees' %}"> Employee Manager </a>
+        </div>
+        <div class="col">
+            <a href="{% url 'list_departments' %}"> Department Manager </a>
+        </div>
+    </div>
+{%endblock%}
